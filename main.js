@@ -156,24 +156,22 @@ document.querySelectorAll('.fade-in').forEach(element => {
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-mobileMenuBtn.addEventListener('click', () => {
-  if (navLinks.style.display === 'flex') {
-    navLinks.style.display = 'none';
-  } else {
-    navLinks.style.display = 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '100%';
-    navLinks.style.left = '0';
-    navLinks.style.right = '0';
-    navLinks.style.background = 'rgba(5, 5, 5, 0.9)';
-    navLinks.style.padding = '2rem';
-  }
+function toggleMobileNav() {
+  navLinks.classList.toggle('nav-open');
+}
+
+mobileMenuBtn.addEventListener('click', toggleMobileNav);
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('nav-open');
+  });
 });
 
 // Contact Form submission handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
+  const formStatus = contactForm.querySelector('.form-status');
+
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -189,8 +187,8 @@ if (contactForm) {
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
+    if (formStatus) formStatus.textContent = '';
 
-    // Use FormSubmit for form handling without a backend
     fetch("https://formsubmit.co/ajax/valsangkaraishwarya987@gmail.com", {
       method: "POST",
       headers: { 
@@ -205,23 +203,27 @@ if (contactForm) {
       })
     })
     .then(response => response.json())
-    .then(data => {
+    .then(() => {
       submitBtn.textContent = 'Message Sent!';
+      if (formStatus) formStatus.textContent = 'Thanks — I’ll reply shortly.';
       contactForm.reset();
       
       setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
-      }, 3000);
+          if (formStatus) formStatus.textContent = '';
+      }, 4000);
     })
     .catch(error => {
       console.error("Form submission error:", error);
       submitBtn.textContent = 'Error! Try Again.';
+      if (formStatus) formStatus.textContent = 'Unable to send the message right now.';
       
       setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
-      }, 3000);
+          if (formStatus) formStatus.textContent = '';
+      }, 4000);
     });
   });
 }

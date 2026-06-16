@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Software Developer Portfolio</title>
+  <title>Aishwarya Valsangkar - Software Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <canvas id="bg"></canvas>
 
   <header class="navbar">
-    <div class="logo">Dev<span>Portfolio</span></div>
+    <div class="logo">Aishwarya<span>Valsangkar</span></div>
     <nav class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -31,11 +31,26 @@
   <main class="content">
     <section id="home" class="hero fade-in">
       <div class="hero-content glass-panel">
-        <h1>Software<span class="highlight">Developer</span></h1>
+        <h1>Aishwarya <span class="highlight">Valsangkar</span></h1>
+        <p style="font-size: 1.5rem; font-weight: 500; color: var(--text-main); margin-bottom: 0.5rem;">Software Developer</p>
         <p>Building aesthetic, performant web experiences.</p>
         <div class="cta-buttons">
           <a href="#projects" class="btn primary">View Work</a>
           <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span>15+</span>
+            <p>Completed Projects</p>
+          </div>
+          <div class="stat-card">
+            <span>2+</span>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-card">
+            <span>10</span>
+            <p>Tools & Frameworks</p>
+          </div>
         </div>
       </div>
     </section>
@@ -44,7 +59,7 @@
       <div class="section-container glass-panel">
         <h2>About Me</h2>
         <p>
-          I’m a passionate .Net Developer with 2+ years of experience in building backend
+          I’m a passionate Software Developer with 2+ years of experience in building backend
           and full-stack applications using .NET, C#, Python, and SQL. I enjoy solving
           real-world problems through clean code, scalable APIs, and efficient system
           design. Currently open to global opportunities and exciting tech challenges.
@@ -99,6 +114,24 @@
       </div>
     </section>
 
+    <section id="certifications" class="fade-in">
+      <div class="section-container glass-panel">
+        <h2>Certifications</h2>
+        <div class="certifications-grid">
+          <div class="cert-card">
+            <h3>German A1 Zertifikat</h3>
+            <p>Goethe-Institut, Pune</p>
+            <span>Proven language proficiency in German.</span>
+          </div>
+          <div class="cert-card">
+            <h3>Python Course</h3>
+            <p>Udemy</p>
+            <span>Completed hands-on Python development training.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="fade-in">
       <div class="section-container">
         <h2>Featured Projects</h2>
@@ -109,24 +142,40 @@
             <p>Built a <strong>Python-based voice assistant</strong> that processes spoken commands and performs tasks like web search,
               app launch, weather updates, and camera operations. Integrated <strong>LLMs</strong>, <strong>NLP</strong>, <strong>speech recognition</strong>, and <strong>text-to-speech</strong> for
               real-time interactive responses.</p>
+            <div class="project-actions">
+              <a href="#contact" class="project-action">Request Demo</a>
+              <a href="#contact" class="project-action secondary">Ask About Tech</a>
+            </div>
           </div>
           <div class="project-card glass-panel">
             <div class="project-img text-to-sql-img"></div>
             <h3>Text-to-SQL Query Generator</h3>
             <p>Developed an <strong>AI-powered system</strong> that converts natural language queries into secure <strong>SQL</strong> using <strong>Google Gemini (LLM)</strong>
               and <strong>LangChain</strong> with human-readable results.</p>
+            <div class="project-actions">
+              <a href="#contact" class="project-action">Learn More</a>
+              <a href="#contact" class="project-action secondary">Talk Details</a>
+            </div>
           </div>
           <div class="project-card glass-panel">
             <div class="project-img bulk-encoding-img"></div>
             <h3>Bulk Encoding App</h3>
             <p>Designed a <strong>.NET-based RFID</strong> bulk encoding system and automated <strong>EPC generation</strong>. Enabled efficient multi-tag
               encoding workflows through reader integration and scalable <strong>backend APIs</strong> using <strong>C#</strong>.</p>
+            <div class="project-actions">
+              <a href="#contact" class="project-action">See Use Cases</a>
+              <a href="#contact" class="project-action secondary">Discuss Integration</a>
+            </div>
           </div>
           <div class="project-card glass-panel">
             <div class="project-img database-sync-img"></div>
             <h3>Database Synchronization</h3>
             <p>Automated <strong>bidirectional data synchronization</strong> between enterprise systems using <strong>Python script workers</strong> and <strong>SQL</strong>. Implemented
               <strong>delta sync</strong>, validation rules, and structured logging to ensure data accuracy and reliability.</p>
+            <div class="project-actions">
+              <a href="#contact" class="project-action">Request Architecture</a>
+              <a href="#contact" class="project-action secondary">Ask About Scale</a>
+            </div>
           </div>
         </div>
       </div>
@@ -135,17 +184,19 @@
     <section id="contact" class="fade-in">
       <div class="section-container glass-panel">
         <h2>Get In Touch</h2>
+        <p>Ready to build something impactful? I’m available for freelance work, collaboration, and full-time roles.</p>
         <form class="contact-form">
           <input type="text" placeholder="Name" required />
           <input type="email" placeholder="Email" required />
           <textarea placeholder="Message" rows="5" required></textarea>
           <button type="submit" class="btn primary">Send Message</button>
+          <div class="form-status" aria-live="polite"></div>
         </form>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2026 Developer Portfolio. Designed with Three.js.</p>
+      <p>&copy; 2026 Aishwarya Valsangkar. Designed with Three.js.</p>
     </footer>
   </main>
   <script type="module" src="./main.js"></script>
